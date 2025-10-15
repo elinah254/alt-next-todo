@@ -1,72 +1,48 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-const inter = Inter({ subsets: ['latin'] })
+import "./globals.css";
+import Navbar from "../components/Navbar";
 
 export const metadata = {
-  title: 'Todo Next',
-  description: 'Todo app with Next.js App Router + Tailwind',
-}
+  title: "LynTasks",
+  description: "Manage tasks and chat beautifully with LynTasks",
+};
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <main className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-          {children}
-        </main>
+      <body className="bg-gradient-to-br from-[#fff8f0] via-[#fef3e2] to-[#fdecd4] min-h-screen text-[#4a2e16]">
+        <Navbar />
+        <main className="px-6 py-10">{children}</main>
       </body>
     </html>
-  )
+  );
 }
 
 
 
-// "use client";
 
-// import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-// import { ReactNode, useState } from "react";
-// import "./globals.css";
 
-// export default function RootLayout({ children }: { children: ReactNode }) {
-//   const [queryClient] = useState(() => new QueryClient());
+// import './globals.css'
+// import { Inter } from 'next/font/google'
+// const inter = Inter({ subsets: ['latin'] })
 
-//   return (
-//     <html lang="en">
-//       <body>
-//         <QueryClientProvider client={queryClient}>
-//           {children}
-//         </QueryClientProvider>
-//       </body>
-//     </html>
-//   );
+// export const metadata = {
+//   title: 'Todo Next',
+//   description: 'Todo app with Next.js App Router + Tailwind',
 // }
 
+// export default function RootLayout({ children }: { children: React.ReactNode }) {
+//   return (
+//     <html lang="en">
+//       <body className={inter.className}>
+//         <main className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+//           {children}
+//         </main>
+//       </body>
+//     </html>
+//   )
+// }
 
-
-
-// // import './globals.css'
-// // import React from 'react'
-
-// // export const metadata = {
-// //   title: 'Alt Next TS',
-// //   description: 'Migrated app'
-// // }
-
-// // export default function RootLayout({ children }: { children: React.ReactNode }) {
-// //   return (
-// //     <html lang="en">
-// //       <body>
-// //         <header className="p-4 border-b">
-// //           <div className="max-w-4xl mx-auto flex items-center justify-between">
-// //             <h1 className="text-2xl font-bold">Alt Next TS</h1>
-// //             <nav>
-// //               <a className="mr-4" href="/">Home</a>
-// //               <a className="mr-4" href="/todos">Todos</a>
-// //             </nav>
-// //           </div>
-// //         </header>
-// //         <main className="max-w-4xl mx-auto p-4">{children}</main>
-// //       </body>
-// //     </html>
-// //   )
-// // }
